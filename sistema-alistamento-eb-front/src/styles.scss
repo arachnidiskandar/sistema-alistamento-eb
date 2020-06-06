@@ -1,3 +1,11 @@
-@import "app/shared/scss/utils.scss";
-@import "app/shared/scss/colors.scss";
-@import "app/shared/scss//mixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import 'index';
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}

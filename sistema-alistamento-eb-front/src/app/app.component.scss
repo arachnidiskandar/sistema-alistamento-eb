@@ -1,0 +1,19 @@
+@import 'index';
+
+.content {
+    .navbar {
+        height: 100%;
+        width: calc(85vw - 100px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 50px;
+        color: $light-gray;
+        i {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+    }
+    display: flex;
+    position: relative;
+}
