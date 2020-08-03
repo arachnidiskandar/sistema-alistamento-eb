@@ -1,16 +1,9 @@
 @import 'index';
 
-:host {
-    width: 15vw;
-    height: 100vh;
-}
-
 .content {
-    width: 15vw;
     box-shadow: 1px 1px 10px $box-shadow-light;
-    height: 100vh;
     border-radius: 0px 10px 10px 0px;
-    position: fixed;
+    height: 100vh;
     #logo {
         height: 100px;
     }
@@ -22,4 +15,5 @@
             text-align: center;
         }
     }
+    background-color: grey;
 }
