@@ -1,0 +1,84 @@
+<div class="pergunta-container">
+    <h3>{{ pergunta.descricao }}</h3>
+    <div [ngSwitch]="pergunta.tipoPergunta">
+        <!-- <div *ngSwitchCase="TipoPergunta.BINARIA"></div> -->
+        <div *ngSwitchCase="TipoPergunta.BINARIA_JUSTIFICATIVA">
+            <label class="pointer" for="radio-sim">
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="true"
+                    id="radio-sim"
+                />
+                <span class="mr-4">Sim</span>
+            </label>
+            <label class="pointer" for="radio-nao">
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="false"
+                    id="radio-nao"
+                />
+                <span>Não</span>
+            </label>
+            <div *ngIf="control.value">
+                <h4>{{ pergunta.descJustificativa }}</h4>
+                <textarea rows="2"></textarea>
+            </div>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.BINARIA_SUB_PERGUNTAS">
+            <label class="pointer" for="radio-sim">
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="true"
+                    id="radio-sim"
+                />
+                <span class="mr-4">Sim</span>
+            </label>
+            <label class="pointer" for="radio-nao">
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="false"
+                    id="radio-nao"
+                />
+                <span>Não</span>
+            </label>
+            <div *ngIf="control.value">
+                <div *ngFor="let subPergunta of pergunta.subPerguntas">
+                    <h4>{{ subPergunta.descricao }}</h4>
+                    <div
+                        *ngIf="
+                            subPergunta.tipoPergunta ===
+                            TipoPergunta.DISSERTATIVA
+                        "
+                    >
+                        <textarea rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.DISSERTATIVA">
+            <textarea [formControl]="control" rows="2"></textarea>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.ESCOLHAS_PRE_DEFINIDAS">
+            <label
+                class="pointer"
+                *ngFor="let escolha of pergunta.escolhas"
+                [for]="'checkbox-' + escolha"
+            >
+                <input
+                    [formControl]="control"
+                    type="checkbox"
+                    [value]="escolha"
+                    [id]="'checkbox-' + escolha"
+                />
+                <span>{{ escolha }}</span>
+            </label>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.ESCOLHAS_PRE_DEFINIDAS_OUTROS"></div>
+        <div *ngSwitchCase="TipoPergunta.BINARIA_JUSTIFICATIVA"></div>
+        <div *ngSwitchCase="TipoPergunta.BINARIA_SUB_PERGUNTAS"></div>
+    </div>
+</div>

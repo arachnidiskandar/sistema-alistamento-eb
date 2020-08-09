@@ -1,9 +1,8 @@
 div {
-    background-color: yellow;
+    background-color: white;
     height: calc(5vh - 30px);
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-    flex-direction: row-reverse;
     padding: 15px;
 }
