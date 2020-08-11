@@ -62,7 +62,7 @@
         <div *ngSwitchCase="TipoPergunta.DISSERTATIVA">
             <textarea [formControl]="control" rows="2"></textarea>
         </div>
-        <div *ngSwitchCase="TipoPergunta.ESCOLHAS_PRE_DEFINIDAS">
+        <div *ngSwitchCase="TipoPergunta.MULTIPLAESCOLHA">
             <label
                 class="pointer"
                 *ngFor="let escolha of pergunta.escolhas"
@@ -77,8 +77,52 @@
                 <span>{{ escolha }}</span>
             </label>
         </div>
-        <div *ngSwitchCase="TipoPergunta.ESCOLHAS_PRE_DEFINIDAS_OUTROS"></div>
-        <div *ngSwitchCase="TipoPergunta.BINARIA_JUSTIFICATIVA"></div>
-        <div *ngSwitchCase="TipoPergunta.BINARIA_SUB_PERGUNTAS"></div>
+        <div *ngSwitchCase="TipoPergunta.MULTIPLAESCOLHA_OUTROS">
+            <label
+                class="pointer"
+                *ngFor="let escolha of pergunta.escolhas"
+                [for]="'checkbox-' + escolha"
+            >
+                <input
+                    [formControl]="control"
+                    type="checkbox"
+                    [value]="escolha"
+                    [id]="'checkbox-' + escolha"
+                />
+                <span>{{ escolha }}</span>
+            </label>
+            <button>Add outra escolha</button>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.UNICA_ESCOLHA">
+            <label
+                class="pointer"
+                *ngFor="let escolha of pergunta.escolhas"
+                [for]="'radio-' + escolha"
+            >
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="escolha"
+                    [id]="'radio-' + escolha"
+                />
+                <span>{{ escolha }}</span>
+            </label>
+        </div>
+        <div *ngSwitchCase="TipoPergunta.UNICA_ESCOLHA_OUTROS">
+            <label
+                class="pointer"
+                *ngFor="let escolha of pergunta.escolhas"
+                [for]="'radio-' + escolha"
+            >
+                <input
+                    [formControl]="control"
+                    type="radio"
+                    [value]="escolha"
+                    [id]="'radio-' + escolha"
+                />
+                <span>{{ escolha }}</span>
+            </label>
+            <button>Add outra escolha</button>
+        </div>
     </div>
 </div>

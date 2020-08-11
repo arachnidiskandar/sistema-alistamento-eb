@@ -1,0 +1,18 @@
+@import 'index';
+.card {
+    padding: 30px;
+    border-radius: 5px;
+    width: 25vw;
+    box-shadow: 1px 1px 10px $box-shadow-light;
+    height: 50vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    .d-flex {
+        flex-flow: column;
+    }
+    button {
+        width: 50%;
+        text-align: center;
+    }
+}

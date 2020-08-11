@@ -12,8 +12,9 @@ export class PreEntrevistaComponent implements OnInit {
         {
             id: 1,
             descricao: 'Você possui tatuagem?',
-            tipoPergunta: TipoPergunta.BINARIA_JUSTIFICATIVA,
+            tipoPergunta: TipoPergunta.MULTIPLAESCOLHA,
             descJustificativa: 'Caso positivo, em que parte do corpo?',
+            escolhas: ['1', '2', '3'],
         },
     ];
     control = new FormControl(null);

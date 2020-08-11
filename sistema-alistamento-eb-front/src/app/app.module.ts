@@ -6,9 +6,15 @@ import { PreEntrevistaComponent } from './core/pre-entrevista/pre-entrevista.com
 import { SharedModule } from './shared/shared.module';
 import { PerguntaComponent } from './core/pre-entrevista/pergunta/pergunta.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './core/login/login.component';
 
 @NgModule({
-    declarations: [AppComponent, PreEntrevistaComponent, PerguntaComponent],
+    declarations: [
+        AppComponent,
+        PreEntrevistaComponent,
+        PerguntaComponent,
+        LoginComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
