@@ -7,8 +7,8 @@ import AuthController from "../controllers/AuthController";
 
 const router = Router();
 
-router.post("/users", UserController.store);
-router.get("/users", authMiddleware, UserController.index);
+router.post("/usuarios", UserController.store);
+router.get("/usuarios", authMiddleware, UserController);
 router.post("/auth", AuthController.store);
 
 export default router;

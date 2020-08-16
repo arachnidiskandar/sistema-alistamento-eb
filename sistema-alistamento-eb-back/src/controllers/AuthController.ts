@@ -1,32 +1,31 @@
-import { Request, Response } from "express";
-import { getRepository } from "typeorm";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-require("dotenv").config();
+// import { Request, Response } from "express";
+// import bcrypt from "bcryptjs";
+// import jwt from "jsonwebtoken";
+// import { Usuario } from "../models/Usuario";
+// require("dotenv").config();
+// const db = require('../database/index');
 
-import User from "../models/User";
-class AuthController {
-  async store(req: Request, res: Response) {
-    const repository = getRepository(User);
-    const { cpf, senha } = req.body;
+// class AuthController {
+//   async autenticar(req: Request, res: Response) {
+//     const { cpf, senha } = req.body;
 
-    const user = await repository.findOne({ where: { cpf } });
-    if (!user) {
-      return res.sendStatus(401);
-    }
-    const isValidPassword = bcrypt.compare(senha, user.senha);
-    if (!isValidPassword) {
-      return res.sendStatus(401);
-    }
-    delete user.senha;
-    const token = jwt.sign({ id: user.cpf }, process.env.SECRET as string, {
-      expiresIn: "1d",
-    });
-    return res.json({
-      user,
-      token,
-    });
-  }
-}
+//     // const user = await db<Usuario>.findOne({ where: { cpf } });
+//     if (!user) {
+//       return res.sendStatus(401);
+//     }
+//     const isValidPassword = bcrypt.compare(senha, user.senha);
+//     if (!isValidPassword) {
+//       return res.sendStatus(401);
+//     }
+//     delete user.senha;
+//     const token = jwt.sign({ id: user.cpf }, process.env.SECRET as string, {
+//       expiresIn: "1d",
+//     });
+//     return res.json({
+//       user,
+//       token,
+//     });
+//   }
+// }
 
-export default new AuthController();
+// export default new AuthController();
