@@ -18,4 +18,4 @@ O projeto está em fase inicial de desenvolvimento. A previsão de conclusão de
 - [Jest](https://jestjs.io/)
 - [Sass](https://sass-lang.com/)
 - [Knex](http://knexjs.org/)
-- [Knex](https://www.typescriptlang.org/)
+- [Typescript](https://www.typescriptlang.org/)
